@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>proje websitem</title>
+    <link rel = "stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <!--! header kısmı başlangıcı -->
+    <header class ="header" > 
+     <a class="helo"> 
+    <img src="images/helo.jpg" alt="helo">  </a>
+
+<nav class = "navbar" id="navbar">
+  <a href="index.html" class = "">Hakkımda</a>
+  <a href="index.html#ilgialani" class = "">İlgi Alanlarım</a>
+  <a href="index.html#özgeçmiş" class = "">Özgeçmiş</a>
+  <a href="index.html#memleketim" class = "">Memleketim</a>
+  <a href="takımımız.html" class = "">Takımımız</a>
+  <a href="iletişim.html" class = "active">İletisim</a>
+  <a href="login.html" class = "">Login</a> 
+</nav>
+
+
+     <!--! header kısmı bitişi -->
+    </header>
+    <div class="connect-container">
+    <div class="connect">
+        <form action="bilgiler.html" name="Form" onsubmit="return validateForm()">
+          <div class="form-group">
+            <label for="name" id="bicim">İsim :</label>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="İsminizi girin."
+            />
+            <small class="zorunlu">Zorunlu alan</small>
+          </div>
+          <div class="form-group">
+            <label for="soyisim" id="bicim">Soyisim :</label>
+            <input
+              type="text"
+              name="surname"
+              class="form-control"
+              placeholder="Soyisminizi girin."
+            />
+            <small class="zorunlu">Zorunlu alan</small>
+          </div>
+          <div class="form-group">
+            <label for="email" id="bicim">Email :</label>
+            <input
+              type="text"
+              name="email"
+              class="form-control"
+              placeholder="ör: birisi@gmail.com..."
+            />
+            <small class="zorunlu">Zorunlu alan</small>
+          </div>
+          <div class="form-group">
+            <label for="message" id="bicim">Öneri Ve Şikayet:</label>
+            <textarea
+              name="message"
+              id="message"
+              rows="5"
+              class="form-control"
+              placeholder="görüş,şikayet ve önerilerinizi yazabilirsiniz."
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="adres" id="bicim">Adres :</label>
+            <textarea
+              name="adres"
+              id="adres"
+              rows="5"
+              class="form-control"
+              placeholder="Dönüş Yapabilmemiz için açık adresinizi girebilirsiniz."
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="date" id="bicim">Doğum Tarihiniz :</label>
+            <input type="date" name="date" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="combobox" id="bicim"> Yaşadığınız Şehir :</label>
+            <select name="sehir">
+              <option selected></option>
+
+              <option>Ankara</option>
+              <option>Adıyaman</option>
+              <option>Adana</option>
+              <option>Antalya</option>
+              <option>Aksaray</option>
+              <option>Ardahan</option>
+              <option>Artvin</option>
+              <option>Bursa</option>
+              <option>Bilecik</option>
+              <option>Bartın</option>
+              <option>Batman</option>
+              <option>Denizli</option>
+              <option>Eskişehir</option>
+              <option>Erzurum</option>
+              <option>Diyarbakır</option>
+              <option>Denizli</option>
+              <option>Giresun</option>
+              <option>Gaziantep</option>
+              <option>İstanbul</option>
+              <option>İzmir</option>
+              <option>Kayseri</option>
+              <option>Kırıkkale</option>
+              <option>Kahramanmaraş</option>
+              <option>Konya</option>
+              <option>Malatya</option>
+              <option>Mersin</option>
+              <option>Muş</option>
+              <option>Ordu</option>
+              <option>Rize</option>
+              <option>Samsun</option>
+              <option>Sivas</option>
+              <option>Şanlıurfa</option>                                                                   
+              <option>Şırnak</option>                           
+              <option>Tekirdağ</option>                    
+              <option>Trabzon</option>                                                                                   
+              <option>Yalova</option> 
+              <option>Zonguldak</option>
+
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="radio" id="bicim">Cinsiyetiniz: </label>
+            <input type="radio" name="cinsiyet" value="Kadın" />kadın
+            <input type="radio" name="cinsiyet" value="Erkek" />erkek
+          </div>
+          <button
+            class="btn-clear"
+            type="reset"
+            id="submit"
+            name="submit"
+            value="Reset"
+            onclick="check()"
+          >
+            Temizle
+          </button>
+          <button class="btn-send" type="submit" id="sub">Gönder</button>
+        </form>
+      </div>
+      <script>
+        function validateForm() {
+          var name = document.forms["Form"]["name"].value;
+          var surname = document.forms["Form"]["surname"].value;
+          var email = document.forms["Form"]["email"].value;
+         
+      
+          if (name === "") {
+            alert("İsim alanı boş bırakılamaz.");
+            return false;
+          }
+      
+          if (surname === "") {
+            alert("Soyisim alanı boş bırakılamaz.");
+            return false;
+          }
+      
+          if (email === "") {
+            alert("E-posta alanı boş bırakılamaz.");
+            return false;
+          }
+      
+          var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          if (!emailPattern.test(email)) {
+            alert("E-posta adresini doğru bir şekilde giriniz.");
+            return false;
+          }
+      
+        
+      
+          return true;
+        }
+        
+        document.getElementById("proje websitem").addEventListener("click", function(event) {
+  event.preventDefault(); // Formun otomatik olarak gönderilmesini engeller
+  if (validateForm()) {
+      document.forms["Form"].submit(); // Formu gönderir
+    }
+  });
+      </script>
+      
+    </body>
+  </html>
